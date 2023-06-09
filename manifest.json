@@ -1,0 +1,21 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "en",
+  "name": "react-native-todo",
+  "short_name": "react-native-todo",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait",
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "id": "com.jeongjaemin.reactnativetodo"
+    },
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.jeongjaemin.reactnativetodo",
+      "id": "com.jeongjaemin.reactnativetodo"
+    }
+  ],
+  "prefer_related_applications": true
+}
