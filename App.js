@@ -28,9 +28,9 @@ export default function App() {
   const loadHeader = async () => {
     try {
       const qqq = await AsyncStorage.getItem("@header");
-      setIsActive(JSON.parse(qqq).isActive);
+      if (qqq) setIsActive(JSON.parse(qqq).isActive);
     } catch (error) {
-      alert("에러가 났습니다.");
+      alert("에러가 났습니다.1");
     }
   };
   const work = async () => {
@@ -38,7 +38,7 @@ export default function App() {
       await AsyncStorage.setItem("@header", JSON.stringify({ isActive: true }));
       setIsActive(true);
     } catch (error) {
-      alert("에러가 났습니다.");
+      alert("에러가 났습니다.2");
     }
   };
   const travel = async () => {
@@ -49,7 +49,7 @@ export default function App() {
       );
       setIsActive(false);
     } catch (error) {
-      alert("에러가 났습니다.");
+      alert("에러가 났습니다.3");
     }
   };
   const onChangeText = (event) => setText(event);
@@ -57,7 +57,7 @@ export default function App() {
     try {
       await AsyncStorage.setItem("@toDos", JSON.stringify(toSave));
     } catch (error) {
-      alert("에러가 났습니다.");
+      alert("에러가 났습니다.4");
     }
   };
   const loadToDos = async () => {
@@ -65,7 +65,7 @@ export default function App() {
       const savedToDos = await AsyncStorage.getItem("@toDos");
       if (savedToDos) setToDos(JSON.parse(savedToDos));
     } catch (error) {
-      alert("에러가 났습니다.");
+      alert("에러가 났습니다.5");
     }
   };
 
