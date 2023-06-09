@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/static/js/main.fe7c2f54.js",
-    "static/js/637.b7382a13.js": "/static/js/637.b7382a13.js",
-    "static/media/Ionicons.ttf": "/static/media/Ionicons.3517aeaa34b2f8cd8eef.ttf",
-    "static/media/AntDesign.ttf": "/static/media/AntDesign.163adab9dbd7cb1ed12a.ttf",
-    "static/media/Entypo.ttf": "/static/media/Entypo.fc6169344c041cffcdae.ttf",
-    "favicon.ico": "/favicon.ico",
-    "index.html": "/index.html",
-    "favicon-32.png": "/favicon-32.png",
-    "favicon-16.png": "/favicon-16.png",
-    "manifest.json": "/manifest.json",
-    "serve.json": "/serve.json",
-    "main.fe7c2f54.js.map": "/static/js/main.fe7c2f54.js.map",
-    "637.b7382a13.js.map": "/static/js/637.b7382a13.js.map"
+    "main.js": "/todos_app/static/js/main.91771466.js",
+    "static/js/637.b7382a13.js": "/todos_app/static/js/637.b7382a13.js",
+    "static/media/Ionicons.ttf": "/todos_app/static/media/Ionicons.3517aeaa34b2f8cd8eef.ttf",
+    "static/media/AntDesign.ttf": "/todos_app/static/media/AntDesign.163adab9dbd7cb1ed12a.ttf",
+    "static/media/Entypo.ttf": "/todos_app/static/media/Entypo.fc6169344c041cffcdae.ttf",
+    "favicon.ico": "/todos_app/favicon.ico",
+    "index.html": "/todos_app/index.html",
+    "favicon-32.png": "/todos_app/favicon-32.png",
+    "favicon-16.png": "/todos_app/favicon-16.png",
+    "manifest.json": "/todos_app/manifest.json",
+    "serve.json": "/todos_app/serve.json",
+    "main.91771466.js.map": "/todos_app/static/js/main.91771466.js.map",
+    "637.b7382a13.js.map": "/todos_app/static/js/637.b7382a13.js.map"
   },
   "entrypoints": [
     "static/js/637.b7382a13.js",
-    "static/js/main.fe7c2f54.js"
+    "static/js/main.91771466.js"
   ]
 }
