@@ -7,6 +7,7 @@ import {
   TextInput,
   ScrollView,
   Alert,
+  Platform,
 } from "react-native";
 import { theme } from "./colors";
 import { useEffect, useState } from "react";
@@ -68,7 +69,7 @@ export default function App() {
     }
   };
 
-  const addWork = async () => {
+  const addWork = () => {
     if (text === "") {
       return;
     }
@@ -77,51 +78,61 @@ export default function App() {
       [Date.now()]: { text, isActive, isDone: false, isEdit: false },
     });
     setToDos(newToDos);
-    await savetoDos(newToDos);
+    savetoDos(newToDos);
     setText("");
   };
 
   const deleteToDo = (id) => {
-    Alert.alert("정말로 삭제하겠습니까 ?", "", [
-      {
-        text: "예",
-        style: "destructive",
-        onPress: async () => {
-          const newToDos = { ...toDos };
-          delete newToDos[id];
-          setToDos(newToDos);
-          await savetoDos(newToDos);
+    if (Platform.OS === "web") {
+      const ok = confirm("정말로 삭제하겠습니까 ?");
+      if (ok) {
+        const newToDos = { ...toDos };
+        delete newToDos[id];
+        setToDos(newToDos);
+        savetoDos(newToDos);
+      }
+    } else {
+      Alert.alert("정말로 삭제하겠습니까 ?", "", [
+        {
+          text: "예",
+          style: "destructive",
+          onPress: () => {
+            const newToDos = { ...toDos };
+            delete newToDos[id];
+            setToDos(newToDos);
+            savetoDos(newToDos);
+          },
         },
-      },
-      {
-        text: "아니요",
-      },
-    ]);
+        {
+          text: "아니요",
+        },
+      ]);
+    }
   };
 
-  const isDoneToDo = async (id) => {
+  const isDoneToDo = (id) => {
     const newToDos = { ...toDos };
     newToDos[id].isDone
       ? (newToDos[id].isDone = false)
       : (newToDos[id].isDone = true);
     setToDos(newToDos);
-    await savetoDos(newToDos);
+    savetoDos(newToDos);
   };
 
-  const isEditToDo = async (id) => {
+  const isEditToDo = (id) => {
     const newToDos = { ...toDos };
     newToDos[id].isEdit = true;
     setToDos(newToDos);
-    await savetoDos(newToDos);
+    savetoDos(newToDos);
   };
   const onChangeEditText = (event) => setEditText(event);
 
-  const editToDo = async (id) => {
+  const editToDo = (id) => {
     const newToDos = { ...toDos };
     newToDos[id].text = editText;
     newToDos[id].isEdit = false;
     setToDos(newToDos);
-    await savetoDos(newToDos);
+    savetoDos(newToDos);
   };
 
   return (
