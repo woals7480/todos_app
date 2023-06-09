@@ -22,8 +22,6 @@ export default function App() {
   useEffect(() => {
     loadToDos();
     loadHeader();
-    // AsyncStorage.setItem("@toDos", JSON.stringify({}));
-    // setToDos({});
   }, []);
 
   const loadHeader = async () => {
@@ -64,7 +62,7 @@ export default function App() {
   const loadToDos = async () => {
     try {
       const savedToDos = await AsyncStorage.getItem("@toDos");
-      setToDos(JSON.parse(savedToDos));
+      if (savedToDos) setToDos(JSON.parse(savedToDos));
     } catch (error) {
       alert("에러가 났습니다.");
     }
@@ -125,7 +123,7 @@ export default function App() {
     setToDos(newToDos);
     await savetoDos(newToDos);
   };
-  console.log(toDos);
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -173,6 +171,7 @@ export default function App() {
                 }}
                 returnKeyType="done"
                 style={styles.input}
+                key={key}
               />
             ) : (
               <View key={key} style={styles.toDo}>
